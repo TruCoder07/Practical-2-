@@ -1,0 +1,279 @@
+-- Create Employee Table
+CREATE TABLE Employee ( 
+    Emp_name VARCHAR(50),
+    Street VARCHAR(50),
+    City VARCHAR(50)
+);
+
+-- Insert data into Employee Table (separate INSERT statements)
+INSERT INTO Employee (Emp_name, Street, City) VALUES ('Adam', 'Spring', 'Pittsfield');
+INSERT INTO Employee (Emp_name, Street, City) VALUES ('Brooks', 'Senator', 'Brooklyn');
+INSERT INTO Employee (Emp_name, Street, City) VALUES ('Curry', 'North', 'Rye');
+INSERT INTO Employee (Emp_name, Street, City) VALUES ('Demalo', 'SunShine', 'San Diego');
+
+CREATE TABLE Work (
+    Emp_name VARCHAR(50),
+    Cmp_name VARCHAR(50),
+    Salary INT
+);
+
+INSERT INTO Work (Emp_name, Cmp_name, Salary) VALUES ('Adam', 'FBC', 20000);
+INSERT INTO Work (Emp_name, Cmp_name, Salary) VALUES ('Brooks', 'MBC', 30000);
+INSERT INTO Work (Emp_name, Cmp_name, Salary) VALUES ('Curry', 'SBC', 10000);
+
+SELECT * FROM WORK;
+
+CREATE TABLE Company (
+    Cmp_name VARCHAR(50),
+    City VARCHAR(50)
+);
+
+INSERT INTO Company (Cmp_name, City) VALUES ('FBC', 'Pittsfield');
+INSERT INTO Company (Cmp_name, City) VALUES ('MBC', 'Brooklyn');
+INSERT INTO Company (Cmp_name, City) VALUES ('SBC', 'Rye');
+
+SELECT * FROM COMPANY;
+
+CREATE TABLE Reserves (
+    Sid INT,
+    Bid INT,
+    Day DATE
+);
+
+INSERT INTO Reserves (Sid, Bid, Day) VALUES (22, 101, TO_DATE('10-OCT-1998', 'DD-MON-YYYY'));
+INSERT INTO Reserves (Sid, Bid, Day) VALUES (22, 102, TO_DATE('10-OCT-1998', 'DD-MON-YYYY'));
+INSERT INTO Reserves (Sid, Bid, Day) VALUES (22, 103, TO_DATE('10-AUG-1998', 'DD-MON-YYYY'));
+INSERT INTO Reserves (Sid, Bid, Day) VALUES (22, 104, TO_DATE('10-JUL-1998', 'DD-MON-YYYY'));
+INSERT INTO Reserves (Sid, Bid, Day) VALUES (31, 102, TO_DATE('11-OCT-1998', 'DD-MON-YYYY'));
+INSERT INTO Reserves (Sid, Bid, Day) VALUES (31, 103, TO_DATE('11-JUN-1998', 'DD-MON-YYYY'));
+INSERT INTO Reserves (Sid, Bid, Day) VALUES (31, 104, TO_DATE('11-DEC-1998', 'DD-MON-YYYY'));
+INSERT INTO Reserves (Sid, Bid, Day) VALUES (64, 101, TO_DATE('09-MAY-1998', 'DD-MON-YYYY'));
+INSERT INTO Reserves (Sid, Bid, Day) VALUES (64, 102, TO_DATE('09-AUG-1998', 'DD-MON-YYYY'));
+INSERT INTO Reserves (Sid, Bid, Day) VALUES (74, 103, TO_DATE('09-AUG-1998', 'DD-MON-YYYY'));
+
+SELECT * FROM Reserves;
+
+CREATE TABLE Boats (
+    Bid INT,
+    Bname VARCHAR(50),
+    Color VARCHAR(50)
+);
+
+INSERT INTO Boats (Bid, Bname, Color) VALUES (101, 'Interlake', 'Blue');
+INSERT INTO Boats (Bid, Bname, Color) VALUES (102, 'Interlake', 'Red');
+INSERT INTO Boats (Bid, Bname, Color) VALUES (103, 'Clipper', 'Green');
+INSERT INTO Boats (Bid, Bname, Color) VALUES (104, 'Marine', 'Red');
+
+SELECT * FROM Boats;
+
+CREATE TABLE Client (
+    Cl_no VARCHAR(10),
+    Name VARCHAR(50),
+    City VARCHAR(50),
+    Pincode VARCHAR(6),
+    State VARCHAR(50),
+    Baldue INT
+);
+
+INSERT INTO Client (Cl_no, Name, City, Pincode, State, Baldue) VALUES ('C00001', 'Ivan Bayross', 'Mumbai', '400054', 'Maharashtra', 15000);
+INSERT INTO Client (Cl_no, Name, City, Pincode, State, Baldue) VALUES ('C00002', 'Mamta Muzumdar', 'Madras', '780001', 'Tamil Nadu', 100);
+INSERT INTO Client (Cl_no, Name, City, Pincode, State, Baldue) VALUES ('C00003', 'Chhaya Bankar', 'Mumbai', '400057', 'Maharashtra', 5000);
+INSERT INTO Client (Cl_no, Name, City, Pincode, State, Baldue) VALUES ('C00004', 'Ashwini Joshi', 'Bangalore', '560001', 'Karnataka', 500);
+INSERT INTO Client (Cl_no, Name, City, Pincode, State, Baldue) VALUES ('C00005', 'Hansel Colaco', 'Mumbai', '400060', 'Maharashtra', 2000);
+INSERT INTO Client (Cl_no, Name, City, Pincode, State, Baldue) VALUES ('C00006', 'Deepak Sharma', 'Mangalore', '560050', 'Karnataka', 1000);
+
+SELECT * FROM Client;
+
+CREATE TABLE Product (
+    Pr_no VARCHAR(10),
+    Dscr VARCHAR(50),
+    Profit INT,
+    Unit VARCHAR(20),
+    Qty INT,
+    Reorder_Lvl INT,
+    Sell_Price INT,
+    Cost_Price INT
+);
+
+INSERT INTO Product (Pr_no, Dscr, Profit, Unit, Qty, Reorder_Lvl, Sell_Price, Cost_Price) VALUES ('P00001', 'T-Shirts', 5, 'Piece', 200, 50, 350, 250);
+INSERT INTO Product (Pr_no, Dscr, Profit, Unit, Qty, Reorder_Lvl, Sell_Price, Cost_Price) VALUES ('P0345', 'Shirts', 6, 'Piece', 150, 50, 500, 350);
+INSERT INTO Product (Pr_no, Dscr, Profit, Unit, Qty, Reorder_Lvl, Sell_Price, Cost_Price) VALUES ('P06734', 'Cotton Jeans', 5, 'Piece', 100, 20, 600, 450);
+INSERT INTO Product (Pr_no, Dscr, Profit, Unit, Qty, Reorder_Lvl, Sell_Price, Cost_Price) VALUES ('P07865', 'Jeans', 5, 'Piece', 100, 20, 750, 500);
+INSERT INTO Product (Pr_no, Dscr, Profit, Unit, Qty, Reorder_Lvl, Sell_Price, Cost_Price) VALUES ('P07868', 'Trousers', 2, 'Piece', 150, 50, 850, 550);
+INSERT INTO Product (Pr_no, Dscr, Profit, Unit, Qty, Reorder_Lvl, Sell_Price, Cost_Price) VALUES ('P07885', 'Pull Overs', 3, 'Piece', 80, 30, 700, 450);
+INSERT INTO Product (Pr_no, Dscr, Profit, Unit, Qty, Reorder_Lvl, Sell_Price, Cost_Price) VALUES ('P07965', 'Denim Shirts', 4, 'Piece', 100, 40, 350, 250);
+INSERT INTO Product (Pr_no, Dscr, Profit, Unit, Qty, Reorder_Lvl, Sell_Price, Cost_Price) VALUES ('P07975', 'Lycra Tops', 5, 'Piece', 70, 30, 300, 175);
+INSERT INTO Product (Pr_no, Dscr, Profit, Unit, Qty, Reorder_Lvl, Sell_Price, Cost_Price) VALUES ('P08865', 'Skirts', 5, 'Piece', 75, 30, 450, 300);
+
+SELECT * FROM Product;
+
+CREATE TABLE Salesman (
+    Sl_no VARCHAR(10),
+    Name VARCHAR(50),
+    Add1 VARCHAR(50),
+    Add2 VARCHAR(50),
+    City VARCHAR(50),
+    Pin VARCHAR(6),
+    State VARCHAR(50),
+    Amt INT,
+    Tgt INT,
+    Sales INT,
+    Rem VARCHAR(20)
+);
+
+INSERT INTO Salesman (Sl_no, Name, Add1, Add2, City, Pin, State, Amt, Tgt, Sales, Rem) VALUES ('S00001', 'Aman', 'A/14', 'Worli', 'Mumbai', '400002', 'Maharashtra', 3000, 100, 50, 'Good');
+INSERT INTO Salesman (Sl_no, Name, Add1, Add2, City, Pin, State, Amt, Tgt, Sales, Rem) VALUES ('S00002', 'Omkar', '65', 'Nariman', 'Mumbai', '400001', 'Maharashtra', 3000, 200, 100, 'Good');
+INSERT INTO Salesman (Sl_no, Name, Add1, Add2, City, Pin, State, Amt, Tgt, Sales, Rem) VALUES ('S00003', 'Raj', 'P-7', 'Bandra', 'Mumbai', '400032', 'Maharashtra', 3000, 200, 100, 'Good');
+INSERT INTO Salesman (Sl_no, Name, Add1, Add2, City, Pin, State, Amt, Tgt, Sales, Rem) VALUES ('S00004', 'Ashish', 'A/5', 'Juhu', 'Mumbai', '400044', 'Maharashtra', 3500, 200, 150, 'Good');
+
+SELECT * FROM Salesman;
+
+CREATE TABLE Salesorder (
+    Od_no VARCHAR(10),
+    Cl_no VARCHAR(10),
+    O_dat DATE,
+    Sl_no VARCHAR(10),
+    D_Type CHAR(1),
+    Bill CHAR(1),
+    D_dat DATE,
+    Status VARCHAR(20)
+);
+
+INSERT INTO Salesorder (Od_no, Cl_no, O_dat, Sl_no, D_Type, Bill, D_dat, Status) VALUES ('O19001', 'C00001', TO_DATE('12-JUN-2004', 'DD-MON-YYYY'), 'S00001', 'F', 'N', TO_DATE('20-JUL-2004', 'DD-MON-YYYY'), 'In Process');
+INSERT INTO Salesorder (Od_no, Cl_no, O_dat, Sl_no, D_Type, Bill, D_dat, Status) VALUES ('O19002', 'C00002', TO_DATE('25-JUN-2004', 'DD-MON-YYYY'), 'S00002', 'P', 'N', TO_DATE('27-JUN-2004', 'DD-MON-YYYY'), 'Cancelled');
+INSERT INTO Salesorder (Od_no, Cl_no, O_dat, Sl_no, D_Type, Bill, D_dat, Status) VALUES ('O46865', 'C00003', TO_DATE('18-FEB-2004', 'DD-MON-YYYY'), 'S00003', 'F', 'Y', TO_DATE('20-FEB-2004', 'DD-MON-YYYY'), 'Fulfilled');
+INSERT INTO Salesorder (Od_no, Cl_no, O_dat, Sl_no, D_Type, Bill, D_dat, Status) VALUES ('O19003', 'C00001', TO_DATE('03-APR-2004', 'DD-MON-YYYY'), 'S00001', 'F', 'Y', TO_DATE('07-APR-2004', 'DD-MON-YYYY'), 'Fulfilled');
+INSERT INTO Salesorder (Od_no, Cl_no, O_dat, Sl_no, D_Type, Bill, D_dat, Status) VALUES ('O46866', 'C00004', TO_DATE('20-MAY-2004', 'DD-MON-YYYY'), 'S00002', 'P', 'N', TO_DATE('22-MAY-2004', 'DD-MON-YYYY'), 'Cancelled');
+INSERT INTO Salesorder (Od_no, Cl_no, O_dat, Sl_no, D_Type, Bill, D_dat, Status) VALUES ('O19008', 'C00005', TO_DATE('24-MAY-2004', 'DD-MON-YYYY'), 'S00004', 'F', 'N', TO_DATE('26-JUL-2004', 'DD-MON-YYYY'), 'In Process');
+
+SELECT * FROM Salesorder;
+
+CREATE TABLE Deposit (
+    Act_no INT,
+    Cname VARCHAR(50),
+    Bname VARCHAR(50),
+    Amount DECIMAL(10, 2),
+    Dat DATE
+);
+
+INSERT INTO Deposit (Act_no, Cname, Bname, Amount, Dat) VALUES (100, 'ANIL', 'VRCE', 1000.00, TO_DATE('01-MAR-1995', 'DD-MON-YYYY'));
+INSERT INTO Deposit (Act_no, Cname, Bname, Amount, Dat) VALUES (101, 'SUNIL', 'AJNI', 5000.00, TO_DATE('04-JAN-1996', 'DD-MON-YYYY'));
+INSERT INTO Deposit (Act_no, Cname, Bname, Amount, Dat) VALUES (102, 'MEHUL', 'KAROLBAGH', 3500.00, TO_DATE('17-NOV-1995', 'DD-MON-YYYY'));
+INSERT INTO Deposit (Act_no, Cname, Bname, Amount, Dat) VALUES (104, 'MADHURI', 'CHANDI', 1200.00, TO_DATE('17-DEC-1995', 'DD-MON-YYYY'));
+INSERT INTO Deposit (Act_no, Cname, Bname, Amount, Dat) VALUES (105, 'PRMOD', 'M.G.ROAD', 3000.00, TO_DATE('27-MAR-1996', 'DD-MON-YYYY'));
+INSERT INTO Deposit (Act_no, Cname, Bname, Amount, Dat) VALUES (106, 'SANDIP', 'ANDHERI', 2000.00, TO_DATE('31-MAR-1996', 'DD-MON-YYYY'));
+INSERT INTO Deposit (Act_no, Cname, Bname, Amount, Dat) VALUES (107, 'SHIVANI', 'VIRAR', 1000.00, TO_DATE('05-SEP-1995', 'DD-MON-YYYY'));
+INSERT INTO Deposit (Act_no, Cname, Bname, Amount, Dat) VALUES (108, 'KRANTI', 'NEHRU PLACE', 5000.00, TO_DATE('02-JUL-1995', 'DD-MON-YYYY'));
+INSERT INTO Deposit (Act_no, Cname, Bname, Amount, Dat) VALUES (109, 'MINU', 'POWAI', 7000.00, TO_DATE('10-AUG-1995', 'DD-MON-YYYY'));
+
+SELECT * FROM Deposit;
+
+CREATE TABLE Borrow (
+    Loanno INT,
+    Cname VARCHAR(50),
+    Bname VARCHAR(50),
+    Amount DECIMAL(10, 2)
+);
+
+INSERT INTO Borrow (Loanno, Cname, Bname, Amount) VALUES (201, 'ANIL', 'VRCE', 1000.00);
+INSERT INTO Borrow (Loanno, Cname, Bname, Amount) VALUES (206, 'MEHUL', 'AJNI', 5000.00);
+INSERT INTO Borrow (Loanno, Cname, Bname, Amount) VALUES (311, 'SUNIL', 'DHARAMPETH', 3000.00);
+INSERT INTO Borrow (Loanno, Cname, Bname, Amount) VALUES (321, 'MADHURI', 'ANDHERI', 2000.00);
+INSERT INTO Borrow (Loanno, Cname, Bname, Amount) VALUES (375, 'PRMOD', 'VIRAR', 8000.00);
+INSERT INTO Borrow (Loanno, Cname, Bname, Amount) VALUES (481, 'KRANTI', 'NEHRU PLACE', 3000.00);
+
+SELECT * FROM Borrow;
+
+CREATE TABLE Manager (
+    Emp_name VARCHAR(50),
+    Man_name VARCHAR(50)
+);
+
+INSERT INTO Manager (Emp_name, Man_name) VALUES ('Adam', 'Smith');
+INSERT INTO Manager (Emp_name, Man_name) VALUES ('Brooks', 'Jones');
+INSERT INTO Manager (Emp_name, Man_name) VALUES ('Curry', 'Hayes');
+
+SELECT * FROM Manager;
+
+CREATE TABLE Branch (
+    Bname VARCHAR(50),
+    City VARCHAR(50)
+);
+
+INSERT INTO Branch (Bname, City) VALUES ('VRCE', 'NAGPUR');
+INSERT INTO Branch (Bname, City) VALUES ('AJNI', 'NAGPUR');
+INSERT INTO Branch (Bname, City) VALUES ('KAROLBAGH', 'DELHI');
+INSERT INTO Branch (Bname, City) VALUES ('CHANDI', 'DELHI');
+INSERT INTO Branch (Bname, City) VALUES ('DHARAMPETH', 'NAGPUR');
+INSERT INTO Branch (Bname, City) VALUES ('M.G.ROAD', 'BANGLORE');
+INSERT INTO Branch (Bname, City) VALUES ('ANDHERI', 'BOMBAY');
+INSERT INTO Branch (Bname, City) VALUES ('VIRAR', 'BOMBAY');
+INSERT INTO Branch (Bname, City) VALUES ('NEHRU PLACE', 'DELHI');
+INSERT INTO Branch (Bname, City) VALUES ('POWAI', 'BOMBAY');
+
+SELECT * FROM Branch;
+
+CREATE TABLE Customers (
+    Cname VARCHAR(50),
+    City VARCHAR(50)
+);
+
+INSERT INTO Customers (Cname, City) VALUES ('ANIL', 'CALCUTTA');
+INSERT INTO Customers (Cname, City) VALUES ('SUNIL', 'DELHI');
+INSERT INTO Customers (Cname, City) VALUES ('MEHUL', 'BARODA');
+INSERT INTO Customers (Cname, City) VALUES ('MANDAR', 'PATNA');
+INSERT INTO Customers (Cname, City) VALUES ('MADHURI', 'NAGPUR');
+INSERT INTO Customers (Cname, City) VALUES ('PRAMOD', 'NAGPUR');
+INSERT INTO Customers (Cname, City) VALUES ('SANDIP', 'SURAT');
+INSERT INTO Customers (Cname, City) VALUES ('SHIVANI', 'BOMBAY');
+INSERT INTO Customers (Cname, City) VALUES ('KRANTI', 'BOMBAY');
+INSERT INTO Customers (Cname, City) VALUES ('NAREN', 'BOMBAY');
+
+SELECT * FROM Customers;
+
+CREATE TABLE Salesorder_Details (
+    Od_no VARCHAR(10),
+    Pr_no VARCHAR(10),
+    Qty_order INT,
+    Qty_disp INT,
+    Rate INT
+);
+
+INSERT INTO Salesorder_Details (Od_no, Pr_no, Qty_order, Qty_disp, Rate) VALUES ('O19001', 'P00001', 4, 4, 525);
+INSERT INTO Salesorder_Details (Od_no, Pr_no, Qty_order, Qty_disp, Rate) VALUES ('O19001', 'P07965', 2, 1, 8400);
+INSERT INTO Salesorder_Details (Od_no, Pr_no, Qty_order, Qty_disp, Rate) VALUES ('O19001', 'P07885', 2, 1, 5250);
+INSERT INTO Salesorder_Details (Od_no, Pr_no, Qty_order, Qty_disp, Rate) VALUES ('O19002', 'P00001', 10, 0, 525);
+INSERT INTO Salesorder_Details (Od_no, Pr_no, Qty_order, Qty_disp, Rate) VALUES ('O46865', 'P07868', 3, 3, 3150);
+INSERT INTO Salesorder_Details (Od_no, Pr_no, Qty_order, Qty_disp, Rate) VALUES ('O46865', 'P07885', 3, 1, 5250);
+INSERT INTO Salesorder_Details (Od_no, Pr_no, Qty_order, Qty_disp, Rate) VALUES ('O46865', 'P00001', 10, 10, 525);
+INSERT INTO Salesorder_Details (Od_no, Pr_no, Qty_order, Qty_disp, Rate) VALUES ('O46865', 'P0345', 4, 4, 1050);
+INSERT INTO Salesorder_Details (Od_no, Pr_no, Qty_order, Qty_disp, Rate) VALUES ('O19003', 'P0345', 2, 2, 1050);
+INSERT INTO Salesorder_Details (Od_no, Pr_no, Qty_order, Qty_disp, Rate) VALUES ('O19003', 'P06734', 1, 1, 12000);
+INSERT INTO Salesorder_Details (Od_no, Pr_no, Qty_order, Qty_disp, Rate) VALUES ('O46866', 'P07965', 1, 0, 8400);
+INSERT INTO Salesorder_Details (Od_no, Pr_no, Qty_order, Qty_disp, Rate) VALUES ('O46866', 'P07975', 1, 0, 1050);
+INSERT INTO Salesorder_Details (Od_no, Pr_no, Qty_order, Qty_disp, Rate) VALUES ('O19008', 'P00001', 10, 5, 525);
+INSERT INTO Salesorder_Details (Od_no, Pr_no, Qty_order, Qty_disp, Rate) VALUES ('O19008', 'P07975', 5, 3, 1050);
+
+SELECT * FROM Salesorder_Details;
+
+CREATE TABLE Sailors (
+    Sid INT,
+    Sname VARCHAR(50),
+    Rating INT,
+    Age DECIMAL(4, 1)
+);
+
+INSERT INTO Sailors (Sid, Sname, Rating, Age) VALUES (22, 'Dustin', 7, 45.0);
+INSERT INTO Sailors (Sid, Sname, Rating, Age) VALUES (29, 'Brutus', 1, 33.0);
+INSERT INTO Sailors (Sid, Sname, Rating, Age) VALUES (31, 'Lubber', 8, 55.5);
+INSERT INTO Sailors (Sid, Sname, Rating, Age) VALUES (32, 'Andy', 8, 25.5);
+INSERT INTO Sailors (Sid, Sname, Rating, Age) VALUES (58, 'Rusty', 10, 35.0);
+INSERT INTO Sailors (Sid, Sname, Rating, Age) VALUES (64, 'Horatio', 7, 35.0);
+INSERT INTO Sailors (Sid, Sname, Rating, Age) VALUES (71, 'Zobra', 10, 16.0);
+INSERT INTO Sailors (Sid, Sname, Rating, Age) VALUES (74, 'Horatio', 9, 35.0);
+INSERT INTO Sailors (Sid, Sname, Rating, Age) VALUES (85, 'Art', 3, 25.5);
+INSERT INTO Sailors (Sid, Sname, Rating, Age) VALUES (95, 'Bob', 3, 63.5);
+
+TRUNCATE TABLE Sailors;
+
+SELECT * FROM Sailors;
